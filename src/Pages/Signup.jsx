@@ -80,7 +80,7 @@ export default function Signup() {
         <div className="mt-4 ml-5">
           <div>
             <label className="font-semibold text-xl text-gray-600 ml-1">
-             confirm Password
+             confirm password
             </label>
           </div>
           <input
