@@ -1,6 +1,9 @@
-export default function Home()
-{
-    return(<div>
-        <p className="font-bold texl-4xl">home</p>
-    </div>)
+import Navbar from "./Navbar";
+export default function Home() {
+  return (
+    <div>
+      <Navbar/>
+      <h2>home</h2>
+    </div>
+  );
 }
