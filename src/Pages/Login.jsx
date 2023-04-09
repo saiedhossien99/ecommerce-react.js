@@ -14,7 +14,7 @@ export default function Login() {
  useEffect(()=>{
   if(localStorage.getItem('token'))
   {
-    nevigate('/')
+    nevigate('/home')
   }
  })
  
@@ -26,7 +26,7 @@ export default function Login() {
       return 
     })
     .then(function (response) {
-      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('token', response.data.response);
       setReload(!Reload);
     })
     
