@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate=useNavigate();
+  const[Reload,setReload]=useState(false);
   function logout(){
     localStorage.removeItem('token')
+    setReload(!Reload);
     
   }
   useEffect(

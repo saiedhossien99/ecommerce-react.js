@@ -13,7 +13,7 @@ export default function Navbar() {
       </li>
       <li className="mr-6">
         <a className="text-blue-500 hover:text-blue-800" href="#">
-          Link
+          admin
         </a>
       </li>
       <li className="mr-6">
