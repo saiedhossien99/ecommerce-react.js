@@ -1,37 +1,56 @@
+import axios from "axios";
 import { useState } from "react";
 
 export default function Additems() {
-  const [caltagory, setCatagory] = useState("");
+  
+  const [name,setname]=useState('');
+  const [price,setprice]=useState('');
+  const [desc,setdesc]=useState('');
+  const [catagory, setCatagory] = useState('');
+  const [image,setimage]=useState('');
+
+  function insert()
+  {
+   
+  }
 
   return (
     <div className="bg-cyan-800 w-screen h-screen items-center justify-center flex">
     <div className="grid grid-flow-cols grid-cols-2 items-center justify-center ">
       <div className="">
         <lebel>product name:</lebel>
-        <input className="ml-2" type="text" placeholder="name" />
+        <input className="ml-2" type="text"
+        onChange={(e)=>{setname(e.target.value)}}
+        placeholder="name" />
       </div>
       <div>
         <lebel>price:</lebel>
-        <input className="ml-2" type="number" placeholder="0.0" />
+        <input className="ml-2" 
+        onChange={(e)=>{setprice(e.target.value)}}
+        type="number"
+        placeholder="0.0" />
       </div>
       <div className="mt-4">
         <lebel>insert an image</lebel>
-        <input className="" type="file" />
+        <input className=""
+        id="image"
+        type="file"
+        onChange={(e)=>{setimage(e.target.files[0])}}
+        />
       </div>
       <div className="mt-4 ml-1">
         <label>
           select catagory
           <select
-            caltagory={caltagory}
             onChange={(e) => {
               setCatagory(e.target.value);
             }}
           >
-            <option caltagory=""> </option>
-            <option caltagory="men">men</option>
-            <option caltagory="women">women</option>
-            <option caltagory="electric">electric</option>
-            <option caltagory="spots">sports</option>
+            <option catagory=""> </option>
+            <option catagory="men">men</option>
+            <option catagory="women">women</option>
+            <option catagory="electric">electric</option>
+            <option catagory="spots">sports</option>
 
           </select>
         </label>
@@ -44,9 +63,12 @@ export default function Additems() {
           cols="50"
           placeholder="write description"
           name="description"
+          onChange={(e)=>{setdesc(e.target.value)}}
         ></textarea>
       </div>
-      <button className="bg-green-300 mt-14">insert item</button>
+      <button className="bg-green-300 mt-14"
+      onClick={insert}
+      >insert item</button>
     </div>
     </div>
   );
