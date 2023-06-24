@@ -2,8 +2,8 @@
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
-import Admin from './Pages/Admin';
-import Additems from './Pages/Additems'
+import Admin from './Admin/Admin';
+import Additems from './Admin/Additems'
 import {Route,Routes} from 'react-router-dom'
 import './App.css';
 

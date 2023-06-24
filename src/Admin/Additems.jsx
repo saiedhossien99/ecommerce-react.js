@@ -46,7 +46,7 @@ export default function Additems(){
           <input type="text" name="name" value={productData.name} onChange={handleInputChange} />
         </div>
         <div>
-          <label>Price:</label>
+          <label>test:</label>
           <input type="text" name="price" value={productData.price} onChange={handleInputChange} />
         </div>
         <div>
