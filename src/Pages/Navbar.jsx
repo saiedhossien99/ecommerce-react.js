@@ -8,17 +8,17 @@ export default function Navbar() {
       </li>
       <li className="mr-6">
         <a className="text-blue-500 hover:text-blue-800" href="#">
-          Link
+          electonics 
         </a>
       </li>
       <li className="mr-6">
         <a className="text-blue-500 hover:text-blue-800" href="#">
-          admin
+        groceries
         </a>
       </li>
       <li className="mr-6">
         <a className="text-gray-400 cursor-not-allowed" href="#">
-          Disabled
+          fashion
         </a>
       </li>
     </ul>

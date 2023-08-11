@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function Groceries() {
   const navigate = useNavigate();
   const [Reload, setReload] = useState(false);
   const [Items, setItems] = useState(null);
@@ -19,7 +19,7 @@ export default function Home() {
   });
   useEffect(() => {
     axios
-      .get("https://localhost:5000/item/route/items/items")
+      .get("https://localhost:5000/item/route/items/groceries")
       .then((response) => {
         setItems(response.data);
       });
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="container py-5">
           <div className="row">
             <div className="col-12 text-center">
-              <h1>Product</h1>
+              <h1>Electronics Product</h1>
               <hr />
             </div>
           </div>
