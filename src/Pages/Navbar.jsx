@@ -1,26 +1,42 @@
+
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
+
 export default function Navbar() {
   return (
     <ul className="flex">
       <li className="mr-6">
-        <a className="text-blue-500 hover:text-blue-800" href="/">
+        <CustomLink className="text-blue-500 hover:text-blue-800" href="/">
           Home
-        </a>
+        </CustomLink>
       </li>
       <li className="mr-6">
-        <a className="text-blue-500 hover:text-blue-800" href="#">
+        <CustomLink className="text-blue-500 hover:text-blue-800" href="/electronics">
           electonics 
-        </a>
+        </CustomLink>
       </li>
       <li className="mr-6">
-        <a className="text-blue-500 hover:text-blue-800" href="#">
+        <CustomLink className="text-blue-500 hover:text-blue-800" href="/groceries">
         groceries
-        </a>
+        </CustomLink>
       </li>
       <li className="mr-6">
-        <a className="text-gray-400 cursor-not-allowed" href="#">
+        <CustomLink className="text-gray-400 cursor-not-allowed" href="/fashion">
           fashion
-        </a>
+        </CustomLink>
       </li>
     </ul>
   );
+}
+
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+
+  return (
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  )
 }
