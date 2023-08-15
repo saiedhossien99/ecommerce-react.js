@@ -54,9 +54,7 @@ export default function Groceries() {
           <div className="row justify-content-around">{Items.map(cardItem)}</div>
         </div>
       </div>
-      <button className="bg-red-600" onClick={logout}>
-        logout
-      </button>
+      
     </div>
   );
 }
