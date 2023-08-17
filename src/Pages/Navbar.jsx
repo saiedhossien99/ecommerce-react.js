@@ -4,7 +4,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export default function Navbar() {
 
- const[Reload,setReload]=useState(null);
+ const[Reload,setReload]=useState(false);
  function logout(){
   localStorage.removeItem("token");
     setReload(!Reload);
