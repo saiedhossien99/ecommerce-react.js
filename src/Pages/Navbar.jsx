@@ -1,7 +1,15 @@
 
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { useState } from "react";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export default function Navbar() {
+
+ const[Reload,setReload]=useState(null);
+ function logout(){
+  localStorage.removeItem("token");
+    setReload(!Reload);
+ }
+
   return (
     <ul className="flex">
       <li className="mr-6">
@@ -20,10 +28,13 @@ export default function Navbar() {
         </CustomLink>
       </li>
       <li className="mr-6">
-        <CustomLink className="text-gray-400 cursor-not-allowed" href="/fashion">
+        <CustomLink className="text-gray-400 " href="/fashion">
           fashion
         </CustomLink>
       </li>
+      <button style={{marginLeft:"5px",borderRadius:'25%,10%'}}
+      onclick={logout}
+    >Log out</button>
     </ul>
   );
 }
